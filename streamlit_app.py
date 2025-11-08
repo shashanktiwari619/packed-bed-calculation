@@ -3,7 +3,6 @@ import math
 
 st.set_page_config(
     page_title="Packed Bed Reactor Calculator",
-    page_icon="🔬",
     layout="wide"
 )
 
@@ -32,7 +31,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<h1 class="main-header">🔬 Packed Bed Reactor Calculator</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">Packed Bed Reactor Calculator</h1>', unsafe_allow_html=True)
 
 # Input section
 col1, col2 = st.columns(2)
@@ -139,7 +138,7 @@ with col2:
     )
 
 # Calculate button
-if st.button("🚀 Calculate Results", use_container_width=True):
+if st.button("Calculate Results", use_container_width=True):
     try:
         # Convert pellet diameter from mm to m
         pellet_diam_m = pellet_diameter / 1000
@@ -162,7 +161,7 @@ if st.button("🚀 Calculate Results", use_container_width=True):
         
         # Display results
         st.markdown("---")
-        st.markdown('<h2 class="section-header">📊 Calculation Results</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 class="section-header">Calculation Results</h2>', unsafe_allow_html=True)
         
         # Pressure Drop Results
         col3, col4 = st.columns(2)
@@ -195,7 +194,7 @@ if st.button("🚀 Calculate Results", use_container_width=True):
             st.caption("Equation: Nu_w = h_wD_t/k_f = 0.057·Re_p^0.78·Pr_f^(1/3)·(D_t/d_p)^0.12·(k_s/k_f)^0.12")
         
         # Summary
-        st.markdown("### 📋 Summary")
+        st.markdown("### Summary")
         summary_col1, summary_col2 = st.columns(2)
         with summary_col1:
             st.metric("Total Pressure Drop", f"{total_pressure_drop:.2f} Pa")
@@ -203,13 +202,13 @@ if st.button("🚀 Calculate Results", use_container_width=True):
             st.metric("Heat Transfer Coefficient", f"{h_w:.2f} W/m²·K")
             
     except Exception as e:
-        st.error(f"❌ Error in calculation: {str(e)}")
+        st.error(f"Error in calculation: {str(e)}")
         st.info("Please check that all input values are valid and non-zero.")
 
 
 # """
 # # Instructions for deployment
-# with st.expander("📖 How to Deploy and Share"):
+# with st.expander("How to Deploy and Share"):
 #     st.markdown("""
 #     ### Deploy on Streamlit Community Cloud (Free)
     
@@ -229,7 +228,7 @@ if st.button("🚀 Calculate Results", use_container_width=True):
 #     streamlit run packed_bed_calculator.py
 #     ```
     
-#     Then share the generated URL with others! 🎉
+#     Then share the generated URL with others! 
 #     """)
 
 # # Footer
