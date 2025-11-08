@@ -190,13 +190,14 @@ if st.button("Calculate Results", use_container_width=True):
             </div>
             """, unsafe_allow_html=True)
             
-            st.markdown("""
-            <div class='equation">
-            <strong>Ergun Equation:</trong><br>
-            $$\\frac{\\Delta P}{L} = 150\\frac{(1 - \\epsilon)^2}{\\epsilon^3 (\\phi_s d_p)^2} \\mu_f v_0 + 1.75\\frac{(1 - \\epsilon)}{\\epsilon^3 (\\phi_s d_p)} \\rho_f v_0^2$$
-            </div>
-             """, unsafe_allow_html=True)
-            # ΔP/L = 150(1-ε)²/(ε³(φd)²) μv + 1.75(1-ε)/(ε³φd) ρv²")
+            # st.markdown("""
+            # <div class='equation">
+            # <strong>Ergun Equation:</trong><br>
+            # $$\\frac{\\Delta P}{L} = 150\\frac{(1 - \\epsilon)^2}{\\epsilon^3 (\\phi_s d_p)^2} \\mu_f v_0 + 1.75\\frac{(1 - \\epsilon)}{\\epsilon^3 (\\phi_s d_p)} \\rho_f v_0^2$$
+            # </div>
+            #  """, unsafe_allow_html=True)
+            
+            st.caption("Equation: ΔP/L = 150(1-ε)²/(ε³(φd)²) μv + 1.75(1-ε)/(ε³φd) ρv²")
         
         with col4:
             st.markdown("### Heat Transfer Coefficient")
@@ -210,14 +211,14 @@ if st.button("Calculate Results", use_container_width=True):
             </div>
             """, unsafe_allow_html=True)
 
-            st.markdown("""
-            <div class="equation">
-            <strong>Li-Finlayson Correlation:</strong><br>
-            $$Nu_w = \\frac{h_w D_t}{k_f} = 0.057 \\cdot Re_p^{0.78} \\cdot Pr_f^{1/3} \\cdot \\left( \\frac{D_t}{d_p} \\right)^{0.12} \\cdot \\left( \\frac{k_s}{k_f} \\right)^{0.12}$$
-            </div>
-            """, unsafe_allow_html=True)
+            # st.markdown("""
+            # <div class="equation">
+            # <strong>Li-Finlayson Correlation:</strong><br>
+            # $$Nu_w = \\frac{h_w D_t}{k_f} = 0.057 \\cdot Re_p^{0.78} \\cdot Pr_f^{1/3} \\cdot \\left( \\frac{D_t}{d_p} \\right)^{0.12} \\cdot \\left( \\frac{k_s}{k_f} \\right)^{0.12}$$
+            # </div>
+            # """, unsafe_allow_html=True)
 
-            # st.caption("Equation: Nu_w = h_wD_t/k_f = 0.057·Re_p^0.78·Pr_f^(1/3)·(D_t/d_p)^0.12·(k_s/k_f)^0.12")
+            st.caption("Equation: Nu_w = h_wD_t/k_f = 0.057·Re_p^0.78·Pr_f^(1/3)·(D_t/d_p)^0.12·(k_s/k_f)^0.12")
          
         
         # Particle-to-Fluid Heat Transfer Results
@@ -232,14 +233,14 @@ if st.button("Calculate Results", use_container_width=True):
         """, unsafe_allow_html=True)
 
 
-        st.markdown("""
-        <div class="equation">
-        <strong>Wakao-Kagei-Funazkri Correlation:</strong><br>
-        $$Nu_p = \\frac{h_{sf}d_p}{k_f} = 2 + 1.1Re_p^{0.6}Pr_f^{1/3}$$
-        </div>
-        """, unsafe_allow_html=True)
+        # st.markdown("""
+        # <div class="equation">
+        # <strong>Wakao-Kagei-Funazkri Correlation:</strong><br>
+        # $$Nu_p = \\frac{h_{sf}d_p}{k_f} = 2 + 1.1Re_p^{0.6}Pr_f^{1/3}$$
+        # </div>
+        # """, unsafe_allow_html=True)
 
-        # st.caption("Wakao-Kagei-Funazkri Correlation: Nu_p = h_sf·d_p/k_f = 2 + 1.1·Re_p^0.6·Pr_f^(1/3)")
+        st.caption("Wakao-Kagei-Funazkri Correlation: Nu_p = h_sf·d_p/k_f = 2 + 1.1·Re_p^0.6·Pr_f^(1/3)")
 
         
         # Summary
