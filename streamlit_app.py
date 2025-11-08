@@ -229,7 +229,7 @@ if st.button("Calculate Results", use_container_width=True):
         with summary_col2:
             st.metric("Heat Transfer Coefficient", f"{h_w:.2f} W/m²·K")
         with summary_col3:
-            st.metric("Particle-Fluid h (h_sf)", f"{h_sf:.2f} W/m²·K"
+            st.metric("Particle-Fluid h (h_sf)", f"{h_sf:.2f} W/m²·K")
 
         # Comparison of heat transfer coefficients
         st.markdown("### 🔍 Heat Transfer Coefficients Comparison")
