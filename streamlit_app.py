@@ -28,6 +28,13 @@ st.markdown("""
         padding-bottom: 0.5rem;
         margin-bottom: 1rem;
     }
+    .heat-transfer-box {
+        background-color: #fff3cd;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 5px solid #ffc107;
+        margin: 1rem 0;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -152,12 +159,18 @@ if st.button("Calculate Results", use_container_width=True):
         pressure_gradient = viscous_term + inertial_term
         total_pressure_drop = pressure_gradient * bed_height
         
-        # Heat Transfer Coefficient Calculation
+        # Common intermediate calculations
         Re_p = (fluid_density * velocity * pellet_diam_m) / viscosity
         Pr_f = (fluid_heat_capacity * viscosity) / fluid_conductivity
+
+        # Wall Heat Transfer Coefficient Calculation (Li-Finlayson correlation)
         k_ratio = steel_conductivity / fluid_conductivity
         Nu_w = 0.057 * (Re_p**0.78) * (Pr_f**(1/3)) * ((col_diameter / pellet_diam_m)**0.12) * (k_ratio**0.12)
         h_w = (Nu_w * fluid_conductivity) / col_diameter
+
+        # Particle-to-Fluid Heat Transfer Coefficient (Wakao-Kagei-Funazkri correlation)
+        Nu_p = 2 + 1.1 * (Re_p**0.6) * (Pr_f**(1/3))
+        h_sf = (Nu_p * fluid_conductivity) / pellet_diam_m
         
         # Display results
         st.markdown("---")
@@ -192,14 +205,43 @@ if st.button("Calculate Results", use_container_width=True):
             """, unsafe_allow_html=True)
             
             st.caption("Equation: Nu_w = h_wD_t/k_f = 0.057·Re_p^0.78·Pr_f^(1/3)·(D_t/d_p)^0.12·(k_s/k_f)^0.12")
+         
+        
+        # Particle-to-Fluid Heat Transfer Results
+        st.markdown("### Particle-to-Fluid Heat Transfer Coefficient")
+        st.markdown(f"""
+        <div class="heat-transfer-box">
+            <p><strong>Particle Reynolds Number (Reₚ):</strong> {Re_p:.2f}</p>
+            <p><strong>Prandtl Number (Pr):</strong> {Pr_f:.3f}</p>
+            <p><strong>Particle Nusselt Number (Nu_p):</strong> {Nu_p:.2f}</p>
+            <p style='color: #E67E22; font-size: 1.2em;'><strong>Particle-to-Fluid Heat Transfer Coefficient (h_sf):</strong> {h_sf:.2f} W/m²·K</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.caption("Wakao-Kagei-Funazkri Correlation: Nu_p = h_sf·d_p/k_f = 2 + 1.1·Re_p^0.6·Pr_f^(1/3)")
+
         
         # Summary
         st.markdown("### Summary")
-        summary_col1, summary_col2 = st.columns(2)
+        summary_col1, summary_col2, summary_col3 = st.columns(3)
         with summary_col1:
             st.metric("Total Pressure Drop", f"{total_pressure_drop:.2f} Pa")
         with summary_col2:
             st.metric("Heat Transfer Coefficient", f"{h_w:.2f} W/m²·K")
+        with summary_col3:
+            st.metric("Particle-Fluid h (h_sf)", f"{h_sf:.2f} W/m²·K"
+
+        # Comparison of heat transfer coefficients
+        st.markdown("### 🔍 Heat Transfer Coefficients Comparison")
+        st.info(f"""
+        - **Wall Heat Transfer Coefficient (h_w)**: {h_w:.2f} W/m²·K  
+          *(Heat transfer between fluid and column wall)*
+        
+        - **Particle-to-Fluid Heat Transfer Coefficient (h_sf)**: {h_sf:.2f} W/m²·K  
+          *(Heat transfer between fluid and pellet surfaces)*
+        
+        **Note**: These represent different physical phenomena in the packed bed system.
+        """)
             
     except Exception as e:
         st.error(f"Error in calculation: {str(e)}")
