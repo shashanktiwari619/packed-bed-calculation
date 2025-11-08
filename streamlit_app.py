@@ -207,7 +207,7 @@ if st.button("🚀 Calculate Results", use_container_width=True):
         st.info("Please check that all input values are valid and non-zero.")
 
 
-'''
+"""
 # Instructions for deployment
 with st.expander("📖 How to Deploy and Share"):
     st.markdown("""
@@ -236,4 +236,4 @@ with st.expander("📖 How to Deploy and Share"):
 st.markdown("---")
 st.caption("Developed for Packed Bed Reactor Calculations | Uses Ergun Equation and Li-Finlayson Correlation")
 
-'''
+"""
