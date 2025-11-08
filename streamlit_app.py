@@ -207,33 +207,33 @@ if st.button("🚀 Calculate Results", use_container_width=True):
         st.info("Please check that all input values are valid and non-zero.")
 
 
-"""
-# Instructions for deployment
-with st.expander("📖 How to Deploy and Share"):
-    st.markdown("""
-    ### Deploy on Streamlit Community Cloud (Free)
+# """
+# # Instructions for deployment
+# with st.expander("📖 How to Deploy and Share"):
+#     st.markdown("""
+#     ### Deploy on Streamlit Community Cloud (Free)
     
-    1. **Save this code** as `packed_bed_calculator.py`
-    2. **Create account** at [streamlit.io/cloud](https://streamlit.io/cloud)
-    3. **Connect your GitHub** repository
-    4. **Deploy the app** - it will give you a public URL like:
-       `https://yourname-packed-bed-calculator.streamlit.app/`
+#     1. **Save this code** as `packed_bed_calculator.py`
+#     2. **Create account** at [streamlit.io/cloud](https://streamlit.io/cloud)
+#     3. **Connect your GitHub** repository
+#     4. **Deploy the app** - it will give you a public URL like:
+#        `https://yourname-packed-bed-calculator.streamlit.app/`
     
-    ### Required packages:
-    ```bash
-    pip install streamlit
-    ```
+#     ### Required packages:
+#     ```bash
+#     pip install streamlit
+#     ```
     
-    ### Run locally:
-    ```bash
-    streamlit run packed_bed_calculator.py
-    ```
+#     ### Run locally:
+#     ```bash
+#     streamlit run packed_bed_calculator.py
+#     ```
     
-    Then share the generated URL with others! 🎉
-    """)
+#     Then share the generated URL with others! 🎉
+#     """)
 
-# Footer
-st.markdown("---")
-st.caption("Developed for Packed Bed Reactor Calculations | Uses Ergun Equation and Li-Finlayson Correlation")
+# # Footer
+# st.markdown("---")
+# st.caption("Developed for Packed Bed Reactor Calculations | Uses Ergun Equation and Li-Finlayson Correlation")
 
-"""
+# """
