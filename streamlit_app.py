@@ -190,7 +190,11 @@ if st.button("Calculate Results", use_container_width=True):
             </div>
             """, unsafe_allow_html=True)
             
-            st.caption("Equation: ΔP/L = 150(1-ε)²/(ε³(φd)²) μv + 1.75(1-ε)/(ε³φd) ρv²")
+            st.markdown("""
+            <div class='equation">
+            <strong>Ergun Equation:</trong><br>
+            $$\\frac{\\Delta P}{L} = 150\\frac{(1-epsilon)^2}{\\epsilon^3(\\phi_s d_p)^2}\\mu_f v_0 + 1.75\\frac
+            ΔP/L = 150(1-ε)²/(ε³(φd)²) μv + 1.75(1-ε)/(ε³φd) ρv²")
         
         with col4:
             st.markdown("### Heat Transfer Coefficient")
