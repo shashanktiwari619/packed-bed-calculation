@@ -188,7 +188,7 @@ if st.button("🚀 Calculate Results", use_container_width=True):
                 <p><strong>Prandtl Number (Pr):</strong> {Pr_f:.3f}</p>
                 <p><strong>Conductivity Ratio (kₛ/kf):</strong> {k_ratio:.2f}</p>
                 <p><strong>Wall Nusselt Number (Nu_w):</strong> {Nu_w:.2f}</p>
-                <p style='color: #C0392B; font-size: 1.2em;'><strong>Conjugate Heat Transfer Coefficient (h_w):</strong> {h_w:.2f} W/m²·K</p>
+                <p style='color: #C0392B; font-size: 1.2em;'><strong>Wall Heat Transfer Coefficient (h_w):</strong> {h_w:.2f} W/m²·K</p>
             </div>
             """, unsafe_allow_html=True)
             
@@ -206,6 +206,8 @@ if st.button("🚀 Calculate Results", use_container_width=True):
         st.error(f"❌ Error in calculation: {str(e)}")
         st.info("Please check that all input values are valid and non-zero.")
 
+
+'''
 # Instructions for deployment
 with st.expander("📖 How to Deploy and Share"):
     st.markdown("""
@@ -233,3 +235,5 @@ with st.expander("📖 How to Deploy and Share"):
 # Footer
 st.markdown("---")
 st.caption("Developed for Packed Bed Reactor Calculations | Uses Ergun Equation and Li-Finlayson Correlation")
+
+'''
