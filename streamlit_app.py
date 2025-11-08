@@ -231,17 +231,17 @@ if st.button("Calculate Results", use_container_width=True):
         with summary_col3:
             st.metric("Particle-Fluid h (h_sf)", f"{h_sf:.2f} W/m²·K")
 
-        # Comparison of heat transfer coefficients
-        st.markdown("### 🔍 Heat Transfer Coefficients Comparison")
-        st.info(f"""
-        - **Wall Heat Transfer Coefficient (h_w)**: {h_w:.2f} W/m²·K  
-          *(Heat transfer between fluid and column wall)*
+        # # Comparison of heat transfer coefficients
+        # st.markdown("### 🔍 Heat Transfer Coefficients Comparison")
+        # st.info(f"""
+        # - **Wall Heat Transfer Coefficient (h_w)**: {h_w:.2f} W/m²·K  
+        #   *(Heat transfer between fluid and column wall)*
         
-        - **Particle-to-Fluid Heat Transfer Coefficient (h_sf)**: {h_sf:.2f} W/m²·K  
-          *(Heat transfer between fluid and pellet surfaces)*
+        # - **Particle-to-Fluid Heat Transfer Coefficient (h_sf)**: {h_sf:.2f} W/m²·K  
+        #   *(Heat transfer between fluid and pellet surfaces)*
         
-        **Note**: These represent different physical phenomena in the packed bed system.
-        """)
+        # **Note**: These represent different physical phenomena in the packed bed system.
+        # """)
             
     except Exception as e:
         st.error(f"Error in calculation: {str(e)}")
